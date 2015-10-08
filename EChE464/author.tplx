@@ -1,0 +1,6 @@
+((*- extends 'article.tplx' -*))
+
+((* block author *))
+\author{Adriaan Riet}
+((* endblock author *))
+

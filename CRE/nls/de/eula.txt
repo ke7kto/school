@@ -1,0 +1,8 @@
+CITRIX(R) LIZENZVEREINBARUNG
+
+Die Verwendung dieser Komponente unterliegt der Citrix Lizenz, die 
+die Produkte von Citrix abdeckt, mit denen Sie diese Komponente 
+verwenden. Diese Komponente ist nur für die Verwendung mit solchen 
+Produkten von Citrix lizenziert.
+
+CTX_code EP_T_A34320

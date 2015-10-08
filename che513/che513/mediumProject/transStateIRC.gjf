@@ -1,0 +1,16 @@
+%chk=J:\che513\mediumProject\transStateIRC.chk
+# irc=(maxpoints=20,calcfc,maxcycles=120) hf/3-21g geom=connectivity
+
+Title Card Required
+
+0 1
+ C                  6.23966918   -3.42975202    0.00000000
+ H                  7.33259618   -3.48306702    0.00029600
+ H                  7.42687218   -2.15838402    0.00002000
+ O                  5.16256918   -3.07488102    0.00008700
+
+ 1 2 1.0 4 3.0
+ 2
+ 3
+ 4
+

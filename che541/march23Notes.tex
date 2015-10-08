@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\begin{itemize}
+\item Convection/Diffusion
+\item Hyperbolic
+\item Numerical Integration
+\item Interpolation
+\item Parallel computing
+\end{itemize}
+\renewcommand{\d}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dtwo}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\begin{align}
+  \theta_t + + u \theta_x = \Gamma \theta_{xx} \\
+  \d{\theta}{t} + u \d{\theta}{x} = \Gamma\dtwo{\theta}{x} \\
+  \text{let }\varphi = \rho Y_i \\
+  \d{\rho Y_i}{t} + \vec{v}\cdot \nabla \rho Y_i = \rho \Gamma \nabla^2 Y_i
+  \nabla \cdot \vec{v} = 0
+\end{align}
+FTCS
+\begin{align}
+  \varphi^{n+1} = \varphi^n - \frac{u\Delta t}{z\Delta x}\left(\varphi_{i+1}-\varphi_{i-1}\right)^n + \frac{\Gamma \Delta t}{\Delta x^2}\left(\varphi_{i+1}-2\varphi_{i}+\varphi_{i-1}\right)
+  \label{FTCS}
+\end{align}
+
+SS.
+\begin{align}
+  \d{u\phi}{x} = \Gamma \dtwo{\phi}{x}\\
+  (u\phi)_e - (u\phi)_w = \Gamma \left(\d{\phi}{x}\right)_e - \Gamma \left(\d{\phi}{x}\right)_w\\
+  \frac{1}{2}u_e\left(\phi_E + \phi_P\right) - \frac{1}{2}u_w\left(\phi_P + \phi_W\right) = \frac{\Gamma}{\delta}\left(\phi_E - \phi_P\right) - \frac{\Gamma}{\delta}\left(\phi_P - \phi_W\right)\\
+  %\phi_W\left[-\frac{1]{2}u - \frac{\Gamma}{\delta}\right] + \phi_P\left[2\Gamma}{\delta}\right] + \phi_E\left[\frac{1}{2}u-\frac{\Gamma}{\delta}\right]=0\\
+  Re = \frac{u\delta}{\Gamma}\\
+  \phi_W\left[-\frac{Re}{2}-1\right]+\phi_P\left[2\right] + \phi_E\left[\frac{Re}{2}-1\right] = 0\\
+  \phi_P = \frac{1}{2} \left[\phi_w\left(\frac{Re}{2} + 1\right) - \phi_E\left(\frac{Re}{2} - 1\right)\right]
+  \label{Why FTCS is wrong for convective}
+\end{align}
+FTCS is wrong for this example for two reasons:
+\begin{itemize}
+  \item Unphysical results can occur
+  \item Dependent on Reynold's number
+\end{itemize}
+$c_p \phi_p = c_E\phi_E + c_W\phi_W$
+Mass balance is 
+\begin{align}
+\d{\rho}{t} + \d{u}{x} = 0\\
+\d{u}{x} = 0
+\end{align}
+
+Add Upwinding
+let $u>0$
+\begin{align}
+  u\phi_e - u\phi_w = \Gamma (\d{\phi}{x})_e - \Gamma(\d{\phi}{x})_w\\
+  u\phi_p - u\phi_W = \Gamma(\phi_E - \phi_P) - \frac{\Gamma}{\delta}(\phi_p-\phi_w)\\
+  \phi_p = \phi_E\left[(\frac{\Gamma}{\delta})/(u + 2 \frac{\Gamma}{\delta})\right] + \phi_W\left[(u+\frac{\Gamma}{\delta})/(u + 2 \frac{\Gamma}{\delta})\right] 
+  \label{Upwinding}
+\end{align}
+\end{document}

@@ -1,0 +1,9 @@
+To use this, open matlab,
+run 
+
+[AllData, dataByFile] = processAllDataWithStdDev();
+
+then you have your data in:
+AllData.data or dataByFile(i).data
+
+It takes a little bit to run.

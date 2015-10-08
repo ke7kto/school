@@ -1,0 +1,94 @@
+\documentclass{article}
+%\usepackage{fullpage}
+\usepackage{mathtools}
+\usepackage{mhchem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mdframed}
+\author{Landau}
+\title{Day 11 Notes}
+\date{October 1, 2015}
+\newenvironment{aside}{\begin{mdframed}}{\end{mdframed}}
+\renewcommand{\d}[0]{\mathrm{d}}
+\newcommand{\pOne}[2]{\frac{\partial #1}{\partial #2}}
+\renewcommand{\deg}[0]{\degree}
+\newcommand{\pTwo}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\dOne}[2]{\frac{\d #1}{\d #2}}
+\newcommand{\dTwo}[2]{\frac{\d^2 #1}{\d #2^2}}
+\newcommand{\diag}[1]{\bcancel{#1}}
+\newcommand{\mdot}[0]{\dot{m}}
+\newcommand{\matr}[1]{\bm{#1}}
+\newcommand{\note}[1]{\vspace{3\parsep}\textit{\textbf{Note: }}#1\vspace{2\parsep}}
+\newcommand{\norm}[1]{\left|#1\right|}
+\graphicspath{{DayXNotesPics/}}
+\begin{document}
+\maketitle{}
+\begin{section}{Intro}
+	\begin{itemize}
+		\item 	
+	\end{itemize}
+\end{section}
+\begin{section}{First}
+	If I have a car and I play the radio, it cools down the battery. If I crank the starter, it heats up the battery. When we have different behaviors in different regimes, it is interesting because we have different mechanisms competing for dominance. We need to consider here, first do some definitions. When I need to study heat, I need to study $q$ or $Q$.
+
+	\begin{align*}
+		Q =\text{heat of reaction}[=]\text{cal/mol}\\
+		q =\text{rate of heat flow}[=]\text{cal/sec}\\
+		q = Q\dot{m}\left[=\frac{\text{cal}}{\text{mole}}\frac{\text{mole}}{\text{sec}}=\frac{\text{cal}}{\text{sec}}\right]
+	\end{align*}
+	where $\dot{m}$ the rate of material is reacted is related to the current through Faraday's law:
+	\begin{align*}
+		\mdot = \frac{w}{Mt} = \frac{I}{Fz}\left[\frac{mole}{sec}\right]
+	\end{align*}
+	heat evolved will be considered a negative sign (this increases cell temperature).
+	heat absorbed will be considered positive.
+	$Q_\text{rev} = T\Delta S$ or $q_\text{rev} = \mdot T\Delta S$
+
+	I also have $IR$ heat, or Joule heating. 
+	\begin{align*}
+		q_\text{irr} = -\left|I\eta_g\right|=- I^2R =- \frac{\eta_g^2}{R}
+	\end{align*}
+	\begin{align*}
+		q_{rev} &= \mdot T\Delta S = \frac{I}{Fn}T\Delta s\\
+		q_{ir} &= - I^2 R\\
+		q_{total} &= q_{rev} + q_{ir} = \frac{I}{Fn}T\Delta s+I^2 R
+	\end{align*}
+
+	One last concept that we need to talk about is liquid junction potential. 
+	It's not important, but you need to know what it is. If you're a biologist, it's very important what it is. It is important if you are going to publish standard potentials. What liquid junction potential is:
+	a positional artifact associated with regions in a cell where concentrations are changing, particularly around reference electrodes. It typically is on the order of a few millivolts, and is constant within the system, so we worry about it only within biological settings. You need to do integration over a region of varying concentration in order to find it.
+
+	This is the potential associated with nonequal diffusivity of negative and positive ions (the potential error of the electroneutrality assumption).
+
+	If you ever used a glass/calomel/reference electrode, and you had ions going through it through a region of varying concentration
+\end{section}
+\begin{section}{Overpotentials at Polarized Electrodes}
+	\begin{enumerate}
+		\item The overpotential and its components
+		\item The activation overpotentail
+		\item The concentration overpotential
+		\item The ohmic overpotential
+		\item Polarization curves under mixed overpotential
+	\end{enumerate}
+
+	Overpotential is what I have to apply to the system above the thermodynamic value to get something to happen. $\Delta V = E + \eta$.
+
+	Anodic reactions have the voltage positive and the current positive. Cathodic reactions have current and voltage negative. Butler-Voellmer Equation for the activation overpotential
+	\begin{align}
+		i = i_0 \left\{e^{\frac{\alpha_{A} F}{RT}\eta_a} - e^{\frac{-\alpha_{C}F}{RT}\eta_c}\right\}
+		\label{Eqn:Butler-Voellmer}
+	\end{align}
+	Approximation the Tafel (Hi-Field) approximation
+	\begin{align*}
+		\eta_a = \frac{RT}{\alpha_a F}\ln{\left(\frac{i}{i_0}\right)} & & \eta_a >> \frac{RT}{F}\\
+		\eta_c = \frac{RT}{\alpha_c F}\ln{\left(\frac{i}{i_0}\right)} & & \eta_a << -\frac{RT}{F}\\
+		\eta_a = \frac{RT}{nF}\frac{i}{i_0}                           & & \eta_a \approx \frac{RT}{F}
+	\end{align*}
+\end{section}
+\end{document}

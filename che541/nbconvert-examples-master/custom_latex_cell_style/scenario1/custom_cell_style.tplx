@@ -1,0 +1,19 @@
+((= Custom cell style
+    A notebook style output without prompts. =))
+
+% Inherit from the notebook style.  If you do not want to inherit from an 
+% existing cell style, you can inherit from latex_base.tplx.
+((*- extends 'style_ipython.tplx' -*))
+
+
+%===============================================================================
+% Custom style code, overrides style_notebook code
+%===============================================================================
+
+((* block definitions *))
+    ((( super() )))
+
+    % Custom prompts colors
+    \definecolor{incolor}{rgb}{0.0, 0.8, 0.0}
+    \definecolor{outcolor}{rgb}{0.65, 0.6, 0.0}
+((* endblock definitions *))

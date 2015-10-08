@@ -1,0 +1,103 @@
+\documentclass[a4paper]{article}
+\usepackage[sumlimits,]{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage[]{siunitx}
+\usepackage[]{nth}
+\begin{document}
+\begin{enumerate}
+\item Standard Phase, 298.15 K, 1 bar
+\item When a reaction occurs
+\item \begin{eqnarray}
+        f&=\phi P \\
+	\phi&=e^{\frac{G_{R}}{RT}}\\
+	G^{R}&=H^{R}-TS^{R}\\
+	H^R&=H-H^{IG}\\
+	S^R&=S-S^{IG}
+	\end{eqnarray}
+\item Outline fugacity coefficient of acetone at boiling point \begin{eqnarray}
+		f&=\phi^{sat} P^{sat}\\
+		\phi^{sat}&=e^{\int_{0}^{P^{sat}}{\frac{Z(T,P)-1}{P}}{dP}}
+	\end{eqnarray}
+	You would need to know the boiling point of acetone, the vapor pressure of the normal boiling point (1 atm), and some equation of state in order to get Z
+\item Outline how to get fugacity coefficient of subcooled (liquid) acetone \{not saturated\}
+	
+	You would need to use the above correlations to get the fugacity of acetone at it's boiling point, then apply the poynting correction\ldots
+	You can also calculate $\phi$ by using the Lee kessler tables\ldots Then you would need reduced temperature, pressure, and acentricity.
+\item How would you \textit{quickly estimate}  the fugacity of pure liquids and gases?
+	\begin{eqnarray}
+		f_{liq}&=P^{sat}(T)\\
+		f_{vap}&=P(T)
+		\label{6}
+	\end{eqnarray}
+\item What is the Lewis-Randall rule used for?
+
+	It gives the ideal properties of any mixture, for use in excess calculations.
+\item For what real systems would the Lewis-Randall rule be considered accurate?
+
+	ideal solutions.
+\item Why do we use residuals? Derive $H^R$ for \nth{2} order virial EOS
+
+	\begin{eqnarray}
+		Z&=1+\frac{B}{V}\\
+		Z-1&=\frac{BP}{RT}\\
+		\frac{G^R}{RT} &=Z-1\\	
+		\frac{\partial \frac{G^R}{RT}}{\partial T} &=(\frac{\partial B}{\partial T}\frac{1}{T}-\frac{BP}{RT^2})(-T)\\
+		\frac{H^R}{RT} &= -T \left(\frac{ \partial \frac{G^R}{RT}}{\partial T}\right)_{P,x}\\
+		\frac{H^R}{RT} &=\frac{P}{R}(\frac{B}{T}-\frac{\partial B}{ \partial T})
+	\end{eqnarray}
+\item Why is a different G\textsuperscript{R} formula used for a pressure-explicit EOS than for a volume-explicit EOS?
+
+	Because a cubic EOS is unreasonably difficult to solve for the non-explicit EOS term, so it's easier to just define the problem with respect to density or Pressure
+\item Why are pressure ratios in compressors and turbines generally 10 or less?
+
+	Because increasing the pressure ratio also increases the temperature, and increasing the pressure ratio above 10 generally leads to overly high temperatures.
+\item What stream variable do we generally assume is constant in evaporators, condensors and other heat exchangers?
+
+	Pressure
+\item What is the physical or molecular (not mathematical) definition of $\overline{V}_i$? Of $\overline{H}_i$?
+
+	$\overline{V}_i$ is the change in molar volume that component i contributes, or the Volume of pure i if the mixture behaved ideally.
+
+	$\overline{H}_i$ is the change in enthalpy that component i contributes, or the Enthalpy of pure i if the mixture behaved ideally.
+\item You know $\mu_1$ and $\mu_2$ for a binary system. How would you obtain $G$ for the mixture?
+	\begin{eqnarray}
+		\mu_i &\equiv& \overline{G}_i\\
+		G&=\Sigma x_i \overline{G}_i =& \Sigma x_i \mu_i
+		\label{14}
+	\end{eqnarray}
+
+\end{enumerate}
+
+Pre Exam Problems
+\begin{enumerate}
+		\setcounter{enumi}{8}
+\item Pitzer correlation for $H^R$:
+	\begin{eqnarray}
+		H^R&=H_{0}^{R}+\omega H_{1}^R
+		\label{9}
+	\end{eqnarray} 
+	Remember that you need to start from a 298.15 K and 1 bar standard state to get accurate values.
+
+\item Remember the formula for enthalpy, the full version
+	
+	$H^{tot}=\sum_{i}^{n} \int_{298.15}^{T}\: Cp_i dT + H_{f_i}^0$
+\item \begin{enumerate}
+		\item Remember to check your units! $bar$s don't cancel with $\frac{m^3}{mol}$
+
+	\end{enumerate}
+\item \begin{enumerate}
+		\item Remember that $\frac{G^E}{RT}$ is unitless
+		\item Get $H^E$ in terms of $x_1$ only, no $x_2$.
+	\end{enumerate}
+
+
+\item \begin{enumerate}
+		\item Watch your units, A is in kJ/mol
+		\item Make sure to check your algebra, probably good to do it explicitly
+	\end{enumerate}
+\end{enumerate}
+
+
+
+\end{document} 
+

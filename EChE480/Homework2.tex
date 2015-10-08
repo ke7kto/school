@@ -1,0 +1,520 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass{article}
+
+    
+    
+    \usepackage{graphicx} % Used to insert images
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{color} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Homework2}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}201}]:} \PY{k+kn}{import} \PY{n+nn}{scipy.constants} \PY{k+kn}{as} \PY{n+nn}{c}
+          \PY{k+kn}{import} \PY{n+nn}{scipy.integrate} \PY{k+kn}{as} \PY{n+nn}{sci}
+          \PY{k+kn}{import} \PY{n+nn}{scipy.optimize} \PY{k+kn}{as} \PY{n+nn}{sco}
+\end{Verbatim}
+
+    Problem 1
+
+Calculate~the~potential~of~10~cc~water~in~a~beaker~containing~an~excess~of~1~gr.~ion/liter~of~
+positive~ions.~For~simplicity~assume~a~spherical~geometry.~(Note~that~$10^{‐8}$~gr.~ions/liter~is~
+just~below~our~conventional~means~of~detection.~Also~note~that~electroneutrality~is~not~a~
+fundamental~law~of~nature.)~
+(The~purpose~of~this~problem~is~to~demonstrate~the~validity~of~the~electroneutrality~
+approximation)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}58}]:} \PY{n}{V} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{milli}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{liter}
+         \PY{c}{\PYZsh{}V = 4/3 *pi*r**3}
+         \PY{n}{r} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{V}\PY{o}{/}\PY{n}{pi}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{)}
+         \PY{c}{\PYZsh{}\PYZbs{}nabla\PYZca{}2 \PYZbs{}phi = 0}
+         \PY{c}{\PYZsh{}\PYZbs{}nabla \PYZbs{}phi = E}
+         \PY{c}{\PYZsh{}Use any book on electrostatics or physics. What is the charge of a sphere}
+         \PY{c}{\PYZsh{}integrate \PYZbs{}phi from r to \PYZbs{}infty to get the potential}
+         \PY{c}{\PYZsh{}Voltage in the sphere is going to be constant.}
+         
+         \PY{c}{\PYZsh{}Assume H3O+ ion is the only ion present.}
+         \PY{n}{MWion} \PY{o}{=} \PY{l+m+mf}{19.} \PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{gram}\PY{o}{/}\PY{l+m+mi}{19}
+         \PY{n}{densityIons} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{*} \PY{n}{c}\PY{o}{.}\PY{n}{gram} \PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{liter}
+         \PY{n}{nIons} \PY{o}{=} \PY{n}{V}\PY{o}{*}\PY{n}{densityIons}\PY{o}{/}\PY{n}{MWion} \PY{c}{\PYZsh{}moles ion}
+         \PY{n}{F} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{physical\PYZus{}constants}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Faraday constant}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+         \PY{n}{q} \PY{o}{=} \PY{n}{F}\PY{o}{*}\PY{n}{nIons} \PY{c}{\PYZsh{}Coulombs}
+         \PY{n}{e0} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{epsilon\PYZus{}0}
+         \PY{n}{Voltage} \PY{o}{=} \PY{n}{q}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{n}{e0}\PY{o}{*}\PY{n}{r}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{q}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{n}{e0}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{inf}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The charge on the sphere is \PYZob{}:.3g\PYZcb{} Volts, or \PYZob{}:,.5g\PYZcb{} teravolts}\PY{l+s}{\PYZdq{}}\PYZbs{}
+               \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{Voltage}\PY{p}{,}\PY{n}{Voltage}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{tera}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The charge on the sphere is 6.49e+14 Volts, or 648.83 teravolts
+    \end{Verbatim}
+
+    Problem 2
+
+Estimate~the~conductivity~of~water~at:~ 1. pH~=~13~(basic)~ 2. pH~=~~7
+(neutral)~ 3. pH~=~~1~(acidic)~
+Assume~only~H+~and~OH‐~are~present~and~contribute~to~the~conductivity.~~(Is~this~a~good~assumption?)~~Remember:~
+{[}H+{]}{[}OH-{]}~=~~10‐14~(always).~Also,~~recall~that~pH~=~‐log{[}H+{]}.~
+(The~purpose~of~this~problem~is~to~demonstrate~the~different~mobilities~of~H+
+~and~OH‐ ~and~ the~fact~that~pure~water~is~highly~resistive.)~
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}59}]:} \PY{n}{pH}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{13.}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+         \PY{n}{pOH}  \PY{o}{=} \PY{l+m+mi}{14} \PY{o}{\PYZhy{}} \PY{n}{pH}
+         \PY{n}{H} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{pH}\PY{p}{)}
+         \PY{n}{OH} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{pOH}\PY{p}{)}
+         \PY{n}{lambdaH} \PY{o}{=} \PY{l+m+mi}{350}
+         \PY{n}{lambdaOH} \PY{o}{=} \PY{l+m+mi}{200}
+         \PY{n}{kappa} \PY{o}{=} \PY{p}{(}\PY{n}{lambdaH}\PY{o}{*}\PY{n}{H} \PY{o}{+} \PY{n}{lambdaOH}\PY{o}{*}\PY{n}{OH}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{1000}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Assuming a total [H+][OH\PYZhy{}] of 10\PYZca{}\PYZhy{}14:}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{kappa}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{pH = \PYZob{}:\PYZcb{}, conductivity = \PYZob{}:.2g\PYZcb{} S/cm}\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{pH}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{kappa}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Assuming a total [H+][OH-] of 10\^{}-14:
+	pH = 13.0, conductivity = 0.02 S/cm
+	pH = 7.0, conductivity = 5.5e-08 S/cm
+	pH = 1.0, conductivity = 0.035 S/cm
+    \end{Verbatim}
+
+    Problem 3
+
+Estimate~the~conductivity~of~0.5~M~aqueous~solution~of~cupric~sulfate~at~pH~2~and~compare~
+it~to~the~same~solution~at~pH~=0.~
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}69}]:} \PY{n}{pH}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{2.}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+         \PY{n}{pOH}  \PY{o}{=} \PY{l+m+mi}{14} \PY{o}{\PYZhy{}} \PY{n}{pH}
+         \PY{n}{H} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{pH}\PY{p}{)}
+         \PY{n}{OH} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{pOH}\PY{p}{)}
+         \PY{n}{lambdaSO4} \PY{o}{=} \PY{l+m+mf}{79.6}
+         \PY{n}{lambdaCu} \PY{o}{=} \PY{l+m+mi}{55}
+         \PY{n}{CuSO4} \PY{o}{=} \PY{n}{Cu} \PY{o}{=} \PY{l+m+mf}{0.5}
+         \PY{n}{SO4} \PY{o}{=} \PY{n}{Cu} \PY{o}{+} \PY{p}{(}\PY{n}{H}\PY{o}{\PYZhy{}}\PY{n}{OH}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}
+         \PY{n}{zCu} \PY{o}{=} \PY{n}{zSO4} \PY{o}{=} \PY{l+m+mi}{2}
+         \PY{n}{kappa} \PY{o}{=} \PY{p}{(}\PY{n}{lambdaSO4} \PY{o}{*}\PY{n}{zSO4}\PY{o}{*} \PY{n}{SO4} \PY{o}{+} \PY{n}{lambdaCu}\PY{o}{*} \PY{n}{zCu}\PY{o}{*}\PY{n}{Cu} \PY{o}{+} \PY{n}{H}\PY{o}{*}\PY{n}{lambdaH} \PY{o}{+} \PY{n}{OH}\PY{o}{*}\PY{n}{lambdaOH}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{1000}
+         \PY{n}{kappa2} \PY{o}{=} \PY{p}{(}\PY{n}{lambdaSO4} \PY{o}{*}\PY{n}{zSO4}\PY{o}{*} \PY{n}{CuSO4} \PY{o}{+} \PY{n}{lambdaCu}\PY{o}{*} \PY{n}{zCu}\PY{o}{*}\PY{n}{CuSO4} \PY{o}{+} \PY{n}{H}\PY{o}{*}\PY{n}{lambdaH} \PY{o}{+} \PY{n}{OH}\PY{o}{*}\PY{n}{lambdaOH}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{1000}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Assuming that the pH is caused by an excess of sulfate anions (sulfuric acid):}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{kappa}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{pH = \PYZob{}:\PYZcb{}, conductivity = \PYZob{}:.3g\PYZcb{} S/cm}\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{pH}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{kappa}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Assuming that the pH difference is caused by magic:}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+         \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{kappa}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{pH = \PYZob{}:\PYZcb{}, conductivity = \PYZob{}:.3g\PYZcb{} S/cm}\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{pH}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{kappa2}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Assuming that the pH is caused by an excess of sulfate anions (sulfuric acid):
+	pH = 2.0, conductivity = 0.139 S/cm
+	pH = 0.0, conductivity = 0.564 S/cm
+Assuming that the pH difference is caused by magic:
+	pH = 2.0, conductivity = 0.138 S/cm
+	pH = 0.0, conductivity = 0.485 S/cm
+    \end{Verbatim}
+
+    Problem 4
+
+Assuming~ crystallographic~ radii~ (see~ data~ below),~ and~ Stokes~
+resistance~ to~movement~ of~ spherical~charge,~determine~the~following:~
+1. Mobilities~of~Na+ and~Cl‐~(Both~absolute~and~relative~mobilities).~
+2.
+Using~the~mobilities~from~part~(a),~estimate~the~conductivity~of~1~molar~NaCl~at~25$^\circ$C.~
+3.~Compare~your~results~from~parts~(a)~and~(b)~with~the~following~experimental~values:~
+
+\begin{verbatim}
+ λ°Na+ = 43.5               λ°Cl‐ = 65.5        [Ω‐1cm2/mole]
+ 
+ ΛNaCl (1M) = 74.35 [ Ω‐1cm2/mole].
+ 
+If there is a difference, please explain. 
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  Compare~the~data~given~in~(c)~with~the~rough~estimate~method~discussed~in~class:~
+\end{enumerate}
+
+λ+=~λ‐~\textsubscript{~50;~λ~H+~}~350;~ λ~OH-=200.
+
+Notice~how~much~less~effort~is~required.~
+
+Data
+
+e0~=~1.602~x~10‐19~{[}cb/electron{]}
+
+μ~=~0.01~{[}gr.~cm‐1~sec‐1{]}
+
+rNa+~=~0.95~Ǻ~ rCl‐=~1.8~Ǻ~
+
+(The~purpose~of~this~problem~is~(1)~to~remind~you~of~the~simplicity~of~estimating~
+conductivities~with~reasonable~accuracy~and~(2)~to~acquire~experience~in~handling~physical~
+parameters~with~different~units)~~
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}181}]:} \PY{n}{e0} \PY{o}{=} \PY{l+m+mf}{1.602e\PYZhy{}19} \PY{c}{\PYZsh{}Coulombs/electron}
+          \PY{n}{MW} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{22.9898}\PY{p}{,}\PY{l+m+mf}{35.453} \PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{gram}
+          \PY{n}{mu} \PY{o}{=} \PY{l+m+mf}{0.01} \PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{centi}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{gram} \PY{c}{\PYZsh{}/MW \PYZsh{}gram\PYZhy{}\PYZgt{}mole/cm\PYZhy{}\PYZgt{}m/sec}
+          \PY{n}{r} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{0.95}\PY{p}{,}\PY{l+m+mf}{1.8}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{angstrom} \PY{c}{\PYZsh{}angs\PYZhy{}\PYZgt{}m}
+          \PY{n}{rLabel} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Na+}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Cl\PYZhy{}}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+          \PY{n}{z} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+          \PY{n}{mobility} \PY{o}{=} \PY{n}{e0}\PY{o}{*}\PY{n}{z}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{6}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{n}{mu}\PY{o}{*}\PY{n}{r}\PY{p}{)}\PY{c}{\PYZsh{}C/el/(kg/sec) = C s/(kg)}
+          \PY{n}{absmobil} \PY{o}{=} \PY{n}{e0}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{6}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{n}{mu}\PY{o}{*}\PY{n}{r}\PY{o}{*}\PY{n}{F}\PY{p}{)}
+          \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{mobility}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+              \PY{n}{lab} \PY{o}{=} \PY{n}{rLabel}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+              \PY{n}{mobil}\PY{o}{=}\PY{n}{mobility}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+              \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The relative mobility of \PYZob{}:\PYZcb{} is \PYZob{}:\PYZgt{}6.2e\PYZcb{} cm\PYZca{}2/(V sec)}\PY{l+s}{\PYZdq{}}\PYZbs{}
+                    \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{lab}\PY{p}{,}\PY{n+nb}{float}\PY{p}{(}\PY{n}{mobil}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{centi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+          \PY{k}{print}\PY{p}{(}\PY{p}{)}
+          \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{mobility}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+              \PY{n}{lab} \PY{o}{=} \PY{n}{rLabel}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+              \PY{n}{absmob}\PY{o}{=}\PY{n}{absmobil}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+              \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The absolute mobility of \PYZob{}:\PYZcb{} is \PYZob{}:.3g\PYZcb{} (cm\PYZca{}2 mole)/(J sec)}\PY{l+s}{\PYZdq{}}\PYZbs{}
+                    \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{lab}\PY{p}{,}\PY{n+nb}{float}\PY{p}{(}\PY{n}{absmob}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{centi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+          \PY{n}{kPH7} \PY{o}{=} \PY{l+m+mf}{1e\PYZhy{}7} \PY{o}{*} \PY{n}{lambdaH} \PY{o}{+} \PY{l+m+mf}{1e\PYZhy{}7}\PY{o}{*}\PY{n}{lambdaOH}
+          \PY{n}{kappa} \PY{o}{=} \PY{n}{F}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{C}\PY{o}{*}\PY{n}{absmobil}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{n}{C}\PY{o}{*}\PY{n}{absmobil}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{+}\PY{n}{kPH7}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{centi}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{(b)}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{sep}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The conductivity of 1 Molar NaCl is \PYZob{}:,.3f\PYZcb{} S/(Ω cm)}\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{kappa}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{centi}\PY{p}{)}\PY{p}{)}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{(c)}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{sep}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{lamdas} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{43.5}\PY{p}{,}\PY{l+m+mf}{65.5}\PY{p}{]}\PY{p}{)}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{centi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}
+          \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{absmobil}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+              \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The lambda of \PYZob{}:\PYZcb{} is \PYZob{}:.2g\PYZcb{}, which is \PYZob{}:.2}\PY{l+s}{\PYZpc{}}\PY{l+s}{\PYZcb{} off from my estimate, which was \PYZob{}:.2g\PYZcb{}}\PY{l+s}{\PYZdq{}}\PYZbs{}
+                    \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{rLabel}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PYZbs{}
+                  \PY{n}{lamdas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n+nb}{abs}\PY{p}{(}\PY{n}{absmobil}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{n}{F}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{\PYZhy{}} \PY{n}{lamdas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n}{lamdas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{absmobil}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{n}{F}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{n}{sep}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The differences come from the solvated radii, as opposed to the }\PY{l+s+se}{\PYZbs{}}
+          \PY{l+s}{        crystallographic radii. H3O+ will be attracted to the }\PY{l+s+se}{\PYZbs{}}
+          \PY{l+s}{      sodium ions more because they have a more concentrated charge, which will make them larger}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          
+          \PY{n}{kappaEst} \PY{o}{=} \PY{l+m+mf}{1e\PYZhy{}7}\PY{o}{*}\PY{l+m+mi}{350} \PY{o}{+} \PY{l+m+mf}{1e\PYZhy{}7}\PY{o}{*}\PY{l+m+mi}{200} \PY{o}{+} \PY{l+m+mi}{1}\PY{o}{*}\PY{l+m+mi}{50} \PY{o}{+} \PY{l+m+mi}{1}\PY{o}{*}\PY{l+m+mi}{50}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{(d)}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{The approximated conductivity is \PYZob{}:.2f\PYZcb{} S/cm}\PY{l+s}{\PYZdq{}}\PYZbs{}
+                \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{kappaEst}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{liter}\PY{p}{)}\PY{p}{,}\PY{n}{sep}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The relative mobility of Na+ is 8.95e-04 cm\^{}2/(V sec)
+The relative mobility of Cl- is -4.72e-04 cm\^{}2/(V sec)
+
+The absolute mobility of Na+ is 9.27e-09 (cm\^{}2 mole)/(J sec)
+The absolute mobility of Cl- is 4.89e-09 (cm\^{}2 mole)/(J sec)
+
+(b)
+The conductivity of 1 Molar NaCl is 0.132 S/(Ω cm)
+
+(c)
+The lambda of Na+ is 0.0044, which is 98.43\% off from my estimate, which was 0.0086
+The lambda of Cl- is 0.0066, which is 30.45\% off from my estimate, which was 0.0046
+The differences come from the solvated radii, as opposed to the crystallographic radii. H3O+ will be attracted to the       sodium ions more because they have a more concentrated charge, which will make them larger
+
+(d)
+The approximated conductivity is 0.10 S/cm
+    \end{Verbatim}
+
+    Problem 5
+
+We~have~calculated~in~class~the~steady‐state~velocity~of~an~ion~subject~to~an~electric~field.~I~
+am~now~interested~in~determining~its~acceleration~period~till~it~reaches~this~steady~state.~
+Assume~that~an~ion~(assume~Na+)~is~suddenly~being~subject~to~an~electric~field~of~1~V/cm~in~
+dilute~aqueous~solution~(=1cp~{[}=10‐2~poise=10‐2~g~cm‐1s ‐1{]}).~~ 1.
+Estimate~the~ion's~steady‐state~velocity 2.
+Use~Newtonian~mechanics~to~determine~the~ion~acceleration~assuming~a~drag~force~
+that~follows~Stokes~law.~~ 3.
+How~long~will~it~take~for~the~ion~to~reach~its~steady‐state~velocity?~~
+4.
+What~is~the~time~constant~the~ion~acceleration?~The~time~constant~is~defined~as~the~
+time~that~is~required~to~reach~63.2\%~of~the~steady‐state~velocity.~~~~
+5.
+How~far~will~the~ion~travel~before~reaching~90\%~of~its~terminal~velocity?~~
+Data~for~Na+ ~ion:~r=1.8~A;~q=1.6x10‐19~C;~m=3.82x10‐23~g.~~
+Find~any~other~parameters~that~you~may~need~in~textbooks,~notes,~the~web,~etc.~
+
+    We have electrical force with the equation from class
+\[F_d = 6\pi \mu r v\] \[\Sigma F = ma\] \[q\frac{dV}{dx} - F_d\], where
+$v_0=0$. As the velocity builds up, the acceleration drops.
+
+We typically ask, what is the time constant, because things don't really
+reach steady state. Use $\tau=t(v_{63\%})$
+
+Integrate it
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}287}]:} \PY{n}{dVdx} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{centi}
+          \PY{n}{mu} \PY{o}{=} \PY{l+m+mf}{1e\PYZhy{}2}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{centi}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{gram}
+          \PY{n}{r} \PY{o}{=} \PY{l+m+mf}{1.8}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{angstrom}
+          \PY{n}{q} \PY{o}{=} \PY{l+m+mf}{1.6e\PYZhy{}19}
+          \PY{n}{m} \PY{o}{=} \PY{l+m+mf}{3.82e\PYZhy{}23}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{gram}
+          \PY{c}{\PYZsh{}Fd = 6*pi*mu*r*vss}
+          \PY{n}{vss} \PY{o}{=} \PY{n}{q}\PY{o}{*}\PY{n}{dVdx}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{6}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{n}{mu}\PY{o}{*}\PY{n}{r}\PY{p}{)}
+          \PY{k}{def} \PY{n+nf}{dxdt}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{t}\PY{p}{)}\PY{p}{:}
+              \PY{n}{dx} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+              \PY{n}{dx}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+              \PY{n}{dx}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{q}\PY{o}{*}\PY{n}{dVdx} \PY{o}{\PYZhy{}} \PY{l+m+mi}{6}\PY{o}{*}\PY{n}{pi}\PY{o}{*}\PY{n}{mu}\PY{o}{*}\PY{n}{r}\PY{o}{*}\PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n}{m}
+              \PY{k}{return} \PY{n}{dx}
+          \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+          \PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{o}{.}\PY{l+m+mf}{1e\PYZhy{}12}\PY{p}{,}\PY{l+m+mi}{10000}\PY{p}{)}
+          \PY{n}{x} \PY{o}{=} \PY{n}{sci}\PY{o}{.}\PY{n}{odeint}\PY{p}{(}\PY{n}{dxdt}\PY{p}{,}\PY{n}{x}\PY{p}{,}\PY{n}{t}\PY{p}{)}
+          \PY{c}{\PYZsh{}print(x)}
+          \PY{k}{def} \PY{n+nf}{vsteady}\PY{p}{(}\PY{n}{tEnd}\PY{p}{)}\PY{p}{:}
+              \PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{tEnd}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{femto}\PY{p}{]}\PY{p}{)}
+              \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+              \PY{k}{return} \PY{p}{(}\PY{n}{sci}\PY{o}{.}\PY{n}{odeint}\PY{p}{(}\PY{n}{dxdt}\PY{p}{,}\PY{n}{x}\PY{p}{,}\PY{n}{t}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{vss}\PY{o}{*}\PY{o}{.}\PY{l+m+mi}{632}\PY{p}{)}\PY{o}{*}\PY{l+m+mf}{1e6}
+          \PY{k}{def} \PY{n+nf}{xsteady}\PY{p}{(}\PY{n}{tEnd}\PY{p}{)}\PY{p}{:}
+              \PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{tEnd}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{femto}\PY{p}{]}\PY{p}{)}
+              \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+              \PY{k}{return} \PY{p}{(}\PY{n}{sci}\PY{o}{.}\PY{n}{odeint}\PY{p}{(}\PY{n}{dxdt}\PY{p}{,}\PY{n}{x}\PY{p}{,}\PY{n}{t}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{n}{vss}\PY{o}{*}\PY{o}{.}\PY{l+m+mi}{90}\PY{p}{)}\PY{o}{*}\PY{l+m+mf}{1e7}
+          \PY{n}{tSS} \PY{o}{=} \PY{n}{sco}\PY{o}{.}\PY{n}{fsolve}\PY{p}{(}\PY{n}{vsteady}\PY{p}{,}\PY{l+m+mf}{1.126e\PYZhy{}2}\PY{p}{)}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{femto}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The steady state velocity is \PYZob{}:.2g\PYZcb{} m/s}\PY{l+s}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{vss}\PY{p}{)}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{t}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{femto}\PY{p}{,}\PY{n}{x}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{micron}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{tSS}\PY{p}{,}\PY{n}{tSS}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{femto}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{vss}\PY{o}{*}\PY{l+m+mf}{0.632}\PY{p}{]}\PY{p}{)}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{micron}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZdl{}v\PYZus{}\PYZob{}}\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s}{tau\PYZcb{}\PYZdl{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{best}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{time (femtoseconds)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Velocity (\PYZdl{}}\PY{l+s}{\PYZbs{}}\PY{l+s}{mu\PYZdl{}m/s)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The ion will never actually reach its steady state velocity. (t=infinity)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The time to reach 63.2}\PY{l+s+si}{\PYZpc{} o}\PY{l+s}{f steady state velocity is \PYZob{}:.1f\PYZcb{} femtoseconds}\PY{l+s}{\PYZdq{}}\PYZbs{}
+                \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb}{float}\PY{p}{(}\PY{n}{tSS}\PY{p}{)}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{femto}\PY{p}{)}\PY{p}{)}
+          \PY{n}{t90} \PY{o}{=} \PY{n}{sco}\PY{o}{.}\PY{n}{fsolve}\PY{p}{(}\PY{n}{xsteady}\PY{p}{,}\PY{l+m+mf}{1.126e\PYZhy{}2}\PY{p}{)}\PY{o}{*}\PY{n}{c}\PY{o}{.}\PY{n}{femto}
+          \PY{n}{x90} \PY{o}{=} \PY{n}{sci}\PY{o}{.}\PY{n}{odeint}\PY{p}{(}\PY{n}{dxdt}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{t90}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}
+          \PY{k}{print}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{The ion will travel \PYZob{}:.1g\PYZcb{} meters (\PYZob{}:.2f\PYZcb{} zm) before reaching 90}\PY{l+s+si}{\PYZpc{} o}\PY{l+s}{f }\PY{l+s+se}{\PYZbs{}}
+          \PY{l+s}{      its terminal velocity}\PY{l+s}{\PYZdq{}}\PYZbs{}
+                \PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{x90}\PY{p}{,}\PY{n}{x90}\PY{o}{/}\PY{n}{c}\PY{o}{.}\PY{n}{zepto}\PY{p}{)}\PY{p}{)}
+          \PY{n}{v2} \PY{o}{=} \PY{n}{sci}\PY{o}{.}\PY{n}{odeint}\PY{p}{(}\PY{n}{dxdt}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mf}{1.126e\PYZhy{}14}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}\PY{c}{\PYZsh{}tSS]))[1,1]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The steady state velocity is 4.7e-06 m/s
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Homework2_files/Homework2_11_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+The ion will never actually reach its steady state velocity. (t=infinity)
+The time to reach 63.2\% of steady state velocity is 11.3 femtoseconds
+The ion will travel 7e-20 meters (74.41 zm) before reaching 90\% of its terminal velocity
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

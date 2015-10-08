@@ -1,0 +1,48 @@
+
+%	File: exam2prep.tex
+%	Created: 7/18/13
+%	Last Change: 7/18/13
+%
+\documentclass[a4paper]{article}
+\usepackage[sumlimits,]{amsmath}
+\usepackage{amssymb}
+\usepackage[]{siunitx}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{showlabels}
+\usepackage[margin=1in]{geometry}
+\newcommand{\pfrac}[2]{ \frac{ \partial (#1)}{ \partial #2}}
+\begin{document}
+\begin{eqnarray}
+	\frac{ \partial F_A}{ \partial V_R}&=& r_A\label{PFR des eq}\\
+	\frac{ \partial( C_A v)}{ \partial V_R}&= r_A =& v\frac{ \partial C_A}{ \partial V_R}+C_A\frac{ \partial v}{ \partial V_R}\\
+	\frac{ \partial N_A}{ \partial t}&=& F_{A0}-F_A+r_A V_R\label{CSTR des eq}\\
+	\frac{ \partial (C_A V_R)}{ \partial t}&= C_{A0}v_0-C_A v+r_A V_R =& V_R \frac{\partial C_A}{ \partial t}+ C_A \frac{ \partial V_R}{ \partial t}\\
+	\frac{ \partial N_A}{ \partial t}&= r_A V_R \Rightarrow& \frac{1}{V_R}\frac{dN_A}{dt}=r_A\label{Batch}\\
+	y &= \frac{P}{P_0}=&\sqrt{1-\alpha W}\label{Ergun}\\
+	S &= \frac{r_D}{\Sigma_i^N r_{Ui}}\\
+	Y &= \frac{r_D}{r_{\text{key reactant}}}\\
+	W_A A_s &= k'c A_s (C_A - C_{As})
+\end{eqnarray}
+Integrating factor example
+\begin{list}{ }{ }
+\item \begin{eqnarray}
+		\pfrac{N_B}{t}&=k_A C_A V_R - k'_c a (C_B-C_{BS})\\
+		a&=\frac{A_s}{V_R}\\
+		\pfrac{N_B}{t}&=k_A C_A V_R - k'_c \frac{A_s}{V_R} (C_B-C_{BS})\\
+		C_{BS}&=0\\
+		\pfrac{N_B}{t}&=k_A C_A V_R - k'_c \frac{V_R}{5}C_B\\
+		\pfrac{N_B}{t}&=k_A N_A - \frac{k'_c}{5} N_B\\
+		\pfrac{N_A}{t}&=-k_A C_A V_R = -k_A N_A\\
+		\therefore N_A &= N_{A0}e^{-k_A t}\\
+		\pfrac{N_B}{t}&=k_A N_{A0}e^{-k_A t}- \frac{k'_c}{5} N_B\\
+		\pfrac{N_B}{t}+\frac{k'_c}{5} N_B &= k_A N_{A0} e^{-k_A t}\\
+		\pfrac{N_B e^{\frac{k'c t}{5}}}{t} &= k_A N_{A0} e^{\frac{k'c t}{5}} e^{-k_A t}\\
+		\partial (N_B e^{\frac{k'c t}{5}}) &= k_A N_{A0} e^{\frac{k'c t}{5}-k_A t} \partial t\\
+		N_B(t) &= \frac{k_A N_{A0}(e^{\frac{k'c t}{5}-k_A t}-1)e^{-\frac{k'_c t}{5}}}{\frac{k'_c}{5}-k_A}
+	\end{eqnarray}
+\item 
+\end{list}
+
+\end{document} 
+

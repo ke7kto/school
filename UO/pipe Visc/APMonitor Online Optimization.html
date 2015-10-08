@@ -1,0 +1,281 @@
+
+<!-- saved from url=(0055)http://apmonitor.com/online/view_pass.php?f=hw19.14.apm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css"> 
+ body             { padding-left:5px; background:#FFFFFF; font-family:arial;}
+ input, textarea  { font-family:courier new; color:black; background:white; font-size: 12px; }
+ #content         { font-size:12px; width:100%; text-align:left; margin-left:20px; }
+  
+ #mytext          { border:1px solid #aaaaaa; padding:4px; background:white; color:black;  width:100%; font-family:courier new;}
+ #mytext2         { border: none; border-bottom:1px solid #aaaaaa; padding:4px; background:#DDDDDD;}
+  
+ #info            { text-align:left; padding-left:0px; font-family:arial; }
+ #info td         { font-size:12px; padding-right:10px; color:#FFFFFF;  }
+ #info .small     { font-size:12px; padding-left:10px; padding-right:0px;}
+ #info .reg       { font-size:12px; padding-left:10px; padding-right:0px;}
+  
+ #info a          { text-decoration:none; color:white; }
+ #info a:hover    { text-decoration:underline; color:#CF9700;}
+ </style>
+   
+ <script type="text/javascript">  
+ <!-- 
+
+ function jsolve() 
+ { 
+ var url = '/cgi-bin/solve.py';
+ var rand = encodeURIComponent(parseInt(Math.random()*99999999)); 
+ var content = encodeURIComponent(document.getElementById('model').value);
+ var imode   = encodeURIComponent(document.getElementById('imode').value);
+ var solver  = encodeURIComponent(document.getElementById('solver').value);
+ var parameters = "content="+content+"&solver="+solver+"&imode="+imode;
+
+ var xmlHttp; 
+
+ //alert(parameters);
+  
+ // Firefox, Opera 8.0+, Safari, IE7.0+ 
+ try { xmlHttp=new XMLHttpRequest(); 
+     } 
+ catch (e) 
+   // Older Internet Explorer 
+   { try { xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); 
+         } 
+   catch (e) 
+     { try { xmlHttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+           } 
+     catch (e) 
+       { alert("This browser does not support XMLHttpRequest."); 
+       return false; 
+       } 
+     } 
+   } 
+   xmlHttp.onreadystatechange=function() 
+     { 
+     if(xmlHttp.readyState<=3)
+       {
+         document.getElementById('sbox').innerHTML= '<img src="busy16.gif">';
+       }
+     if(xmlHttp.readyState==4) 
+       { 
+	 document.getElementById('sbox').innerHTML=xmlHttp.responseText; 
+       } 
+     } 
+   xmlHttp.open("POST",url,true); 
+   xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xmlHttp.send(parameters); 
+   } 
+ //--> 
+ </script>  
+  
+  
+ <script type="text/javascript"> 
+ <!-- 
+   function menu(item,image) 
+     { 
+     var f = document.getElementById(item); 
+  
+     f.src = image; 
+     } 
+
+   function toggle_visibility(item) 
+     { 
+     var f = document.getElementById(item); 
+
+     f.style.visibility = "visible"; 
+
+     //if (f.style.visibility == "visible") 
+     //  f.style.visibility == "hidden"; 
+     //else 
+     //  f.style.visibility == "visible"; 
+     } 
+ //--> 
+ </script> 
+
+
+ <script type="text/javascript"> 
+ <!-- 
+ function popup(mylink, windowname) 
+ { 
+ if (! window.focus)return true; 
+ var href; 
+ if (typeof(mylink) == "string") 
+   href=mylink; 
+ else 
+   href=mylink.href; 
+   window.open(href,windowname,"height=800,width=600,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes"); 
+   return false; 
+ } 
+ //--> 
+
+ <!-- 
+ function popup_print(mylink, windowname) 
+ { 
+ if (! window.focus)return true; 
+ var href; 
+ if (typeof(mylink) == "string") 
+   href=mylink; 
+ else 
+   href=mylink.href; 
+   window.open(href,windowname,"height=800,width=600,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes"); 
+   return false; 
+ } 
+ //--> 
+ </script> 
+
+ <script type="text/javascript">  
+
+ <!--myField accepts an object reference, myValue accepts the text string to insert at the cursor  
+
+ function insertatcursor(myField, myValue) {  
+ if (document.selection) {  
+ myField.focus();  
+ sel = document.selection.createRange();  
+ sel.text = myValue;  
+ }  
+
+ else if (myField.selectionStart == 0 || myField.selectionStart == '0') {  
+ var startPos = myField.selectionStart;  
+ var endPos = myField.selectionEnd;  
+ myField.value = myField.value.substring(0, startPos)+ myValue+ myField.value.substring(endPos, myField.value.length);  
+ }  
+ else {  
+ myField.value += myValue;  
+ }  
+ }  
+ //--> 
+ </script>  
+
+<script type="text/javascript" src="./APMonitor Online Optimization_files/jquery.min.js"></script>
+<script type="text/javascript" src="./APMonitor Online Optimization_files/jquery.tae.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("textarea").inputexpander();
+	});
+</script>
+  
+  
+
+<title>APMonitor Online Optimization</title> 
+
+ </head> 
+ <body> 
+
+<table align="center" width="90%" border="0" cellspacing="0" bordercolor="#AAAAAA"><tbody><tr bgcolor="#FFFFFF"><td><table style="background-color: #fff; padding: 0px;" cellspacing="0"><tbody><tr><td><a href="http://apmonitor.com/"><img src="./APMonitor Online Optimization_files/apm_learn_50.png"></a></td><td nowrap=""><b><span style="color: blue;">A</span><span style="color: red;">P</span><span style="color: black;">Monitor Modeling Language</span></b>  <a href="http://apmonitor.com/wiki"><img src="./APMonitor Online Optimization_files/apm_wiki_50.png"></a>  <a href="http://apmonitor.com/wiki/index.php/Main/ApplicationWebinars"><img src="./APMonitor Online Optimization_files/apm_users_50.png"></a>  <a href="http://apmonitor.com/me575"><img src="./APMonitor Online Optimization_files/apm_learn_50.png"></a>  <a href="https://www.youtube.com/user/APMonitorCom"><img src="./APMonitor Online Optimization_files/apm_youtube_50.png"></a></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></td></tr><tr><td><form name="myInput" onsubmit="javascript:return false"><span title="Load New Problem"><input style="vertical-align:bottom;margin:0px;padding:0px;" type="image" name="Load" id="load_button" onclick="window.location.reload()" src="./APMonitor Online Optimization_files/new_out.png" onmouseover="menu(&#39;load_button&#39;,&#39;/icon/new_over.png&#39;)" onmouseout="menu(&#39;load_button&#39;,&#39;/icon/new_out.png&#39;)"></span><span title="Download Benchmark Problems"><input style="vertical-align:bottom;margin:0px;padding:0px;" type="image" name="Save" id="save_button" onclick="window.location.href=&#39;../download/solver_benchmarks.zip&#39;" src="./APMonitor Online Optimization_files/save_out.png" onmouseover="menu(&#39;save_button&#39;,&#39;/icon/save_over.png&#39;)" onmouseout="menu(&#39;save_button&#39;,&#39;/icon/save_out.png&#39;)"></span><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/break.png"><span title="Select Solver"><select style="vertical-align:bottom;border-width:2px;border-style:solid;border-color:#8888FF;margin:0px;padding:0px;" name="solver" id="solver"><optgroup label="Active Set"><option selected="" value="1">APOPT</option></optgroup><optgroup label="Interior Point"> <option value="2">BPOPT</option> <option value="3">IPOPT</option></optgroup><optgroup label="Benchmark"><option value="0">Try All</option></optgroup></select></span><span title="Select Solution Mode"><select style="vertical-align:bottom;border-width:2px;border-style:solid;border-color:#8888FF;margin:0px;padding:0px;" name="imode" id="imode"><optgroup label="Steady State"> <option value="1">Simulate</option> <option value="2">Estimate</option> <option selected="" value="3">Optimize</option></optgroup><optgroup label="Dynamic"><option value="4">Simulate</option><option value="5">Estimate</option><option value="6">Optimize</option></optgroup><optgroup label="Sequential"><option value="7">Simulate</option></optgroup></select></span><span title="Solve Optimization Problem"><input style="vertical-align:bottom;margin:0px;padding:0px;" type="image" name="Run" id="run_button" onclick="jsolve()" src="./APMonitor Online Optimization_files/run_out.png" onmouseover="menu(&#39;run_button&#39;,&#39;/icon/run_over.png&#39;)" onmouseout="menu(&#39;run_button&#39;,&#39;/icon/run_out.png&#39;)"></span><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/break.png"><span title="View Solution"><a href="http://apmonitor.com/online/view_pass.php?f=hw19.14.apm#sbox"><img style="vertical-align:bottom;margin:0px;padding:0px;" id="results_button" src="./APMonitor Online Optimization_files/results_out.png" onmouseover="menu(&#39;results_button&#39;,&#39;/icon/results_over.png&#39;)" onmouseout="menu(&#39;results_button&#39;,&#39;/icon/results_out.png&#39;)"></a></span><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/break.png"><span title="Print Document"><a href="http://apmonitor.com/online/view_pass.php?d=1Demo10.8.112.98_43389404&f=1Demo10.8.112.98_43389404.apm&view=yes"><img style="vertical-align:bottom;margin:0px;padding:0px;" id="print_button" src="./APMonitor Online Optimization_files/print_out.png" onmouseover="menu(&#39;print_button&#39;,&#39;/icon/print_over.png&#39;)" onmouseout="menu(&#39;print_button&#39;,&#39;/icon/print_out.png&#39;)"></a></span><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/break.png"><span title="Documentation"><a href="http://apmonitor.com/wiki"><img style="vertical-align:bottom;margin:0px;padding:0px;" id="help_button" src="./APMonitor Online Optimization_files/help_out.png" onmouseover="menu(&#39;help_button&#39;,&#39;/icon/help_over.png&#39;)" onmouseout="menu(&#39;help_button&#39;,&#39;/icon/help_out.png&#39;)"></a></span><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/blank.png"><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/blank.png"><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/blank.png"><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/blank.png"><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/blank.png"><img style="vertical-align:bottom;margin:0px;padding:0px;" src="./APMonitor Online Optimization_files/blank.png"><span title="Close File without Saving"><img style="vertical-align:bottom;margin:0px;padding:0px;" id="close_button" src="./APMonitor Online Optimization_files/close_out.png" onclick="history.back()" onmouseover="menu(&#39;close_button&#39;,&#39;/icon/close_over.png&#39;)" onmouseout="menu(&#39;close_button&#39;,&#39;/icon/close_out.png&#39;)"></span><br><textarea id="model" name="content" class="tae" style="border: 1px solid rgb(170, 170, 170); height: 649px; min-height: 300px; width: 100%; overflow: hidden; font-family: &#39;courier new&#39;;">! Homework problem from Process Dynamics and Control
+! by Seborg, Edgar, Mellichamp, Doyle, Edition 3
+! Problem 19.14
+Model
+  Parameters
+    Fa = 150   ! Flow of A (L/hr)
+    Caf = 0.3  ! Feed Concentration of A (mol A/L)
+    Cbf = 0.3  ! Feed Concentration of B (mol B/L)
+    V = 200    ! Volume of reactor (L)
+
+    !rate constants
+    k1 = 1.5
+    k2 = 2.0
+  End Parameters
+
+  Variables
+    Ca         ! Concentration of A in reactor (mol A/L)
+    Cb         ! Concentration of B in reactor (mol B/L)
+    F          ! Total flow out of reactor (L/hr)
+    Fb = 150, &lt;=200, &gt;=0
+    ! Fb is the degree of freedom to maximize Cb
+  End Variables
+
+  Equations
+    ! overall material balance, assuming constant densities of A, B, and diluant
+    F = Fa + Fb
+
+    ! overall species balance for A  
+    0 = Fa * Caf - F*Ca - k1*Ca*V + k2*Cb*V
+
+    ! overall species balance for B  
+    0 = Fb * Cbf - F*Cb + k1*Ca*V - k2*Cb*V
+    
+    ! objective function
+    ! maximize total amount of B leaving the reactor
+    maximize Cb * F
+  End Equations
+End Model
+</textarea><br><input type="hidden" name="d" value="1Demo10.8.112.98_43389404"><input type="hidden" name="f" value="1Demo10.8.112.98_43389404.apm"><input type="hidden" name="code" value="05201412"></form></td></tr></tbody></table><table align="center" width="90%" border="0" cellspacing="0"><tbody><tr><td><pre><div width="90%" id="sbox"><img src="./APMonitor Online Optimization_files/green_check25.jpg"> Successful Solution
+Objective Value = -26.1941976
+<hr>
+a1 = -5000.0
+a2 = -5500.0
+ca = 0.125372305512
+caf = 0.300000011921
+cb = 0.174627706409
+cbf = 0.300000011921
+f = 150.000198364
+fa = 150.0
+fb = 0.000249746808549
+k1 = 3.64682102203
+k2 = 1.86820197105
+t = 367.100006104
+v = 200.0
+<hr>
+<a href="http://apmonitor.com/online/127.0.0.1_online_2692/127.0.0.1_online_2692_var.htm"><img src="./APMonitor Online Optimization_files/table25.jpg"> View Solution Results</a>
+<hr>
+<img src="./APMonitor Online Optimization_files/gear25.jpg"> Solver Output
+<hr>
+apm 127.0.0.1_online_2692<br><pre> ----------------------------------------------------------------
+ APMonitor, Version 0.7.0
+ Software Trial
+ ----------------------------------------------------------------
+ 
+ 
+ --------- APM Model Size ------------
+ Each time step contains
+   Objects      :            0
+   Constants    :            0
+   Variables    :           13
+   Intermediates:            0
+   Connections  :            0
+   Equations    :            6
+   Residuals    :            6
+ 
+ files: rto.t0 does not exist
+ Number of state variables:              6
+ Number of total equations: -            5
+ Number of slack variables: -            0
+ ---------------------------------------
+ Degrees of freedom       :              1
+ 
+ ----------------------------------------------
+ Steady State Optimization with APOPT Solver
+ ----------------------------------------------
+ 
+ Iter    Objective  Convergence
+    0  5.53116E+07  2.64682E+00
+    1  2.76573E+08  2.62035E+00
+    2 -2.61942E+01  3.14322E+00
+    3 -2.61942E+01  2.62290E-15
+    4 -2.61942E+01  6.06459E-15
+    5 -2.61942E+01  1.11022E-16
+ Successful solution
+ 
+ ---------------------------------------------------
+ Solver         :  APOPT (v1.0)
+ Solution time  :   1.380000000062864E-002 sec
+ Objective      :   -26.1941976243673     
+ Successful solution
+ ---------------------------------------------------
+ 
+</pre>  
+</div></pre></td></tr></tbody></table> 
+
+  
+  
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); 
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); 
+</script><script src="./APMonitor Online Optimization_files/ga.js" type="text/javascript"></script> 
+<script type="text/javascript"> 
+try { 
+var pageTracker = _gat._getTracker("UA-494092-1"); 
+pageTracker._trackPageview(); 
+} catch(err) {}</script>
+
+</body></html>

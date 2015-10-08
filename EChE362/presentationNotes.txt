@@ -1,0 +1,12 @@
+Slide numbers always help
+Error bars
+
+4 L/min -- what assumptions?
+
+U values are bigger for S&T than plate and frame? - Slide before complete Network --Pilot trial
+
+You say that 4 L/min is the best, but have 2.1 as the best in Most Efficient Heat Exchanger Network  (Table 4)
+
+Fouling factor determined by correlation?
+
+Why temperature increase as a factor of Purchasing and Paying Back?

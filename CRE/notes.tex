@@ -1,0 +1,64 @@
+%	File: Notes.tex
+%	Created: 7/18/13
+%	Last Change: 7/18/13
+%
+\documentclass[a4paper]{article}
+\usepackage[sumlimits,]{amsmath}
+\usepackage[]{siunitx}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{showlabels}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+
+The Design equations are:
+
+\begin{eqnarray}
+	\frac{ \partial F_A}{ \partial V_R}&= r_A \label{PFR}\\
+	\frac{ \partial N_A}{ \partial t}&= F_{A0}-F_A+r_A V_R \label{CSTR}\\
+	\frac{ \partial N_A}{ \partial t}&= r_A V_R \label{Batch}
+\end{eqnarray}
+
+In order to find reaction rates $r_A$, you should:
+\begin{list}{ }{ }
+	\item Create table of t, Concentrations of reactants, and $\frac{ \Delta C}{ \Delta t}$
+	\item watch the fit, sometimes you may need to ignore the endpoints.
+\end{list}
+
+Alternate method
+
+\begin{list}{}{}
+	\item $-\frac{ \partial C_A}{ \partial t}= -r_A$
+	\item take the logs of everything
+		\begin{eqnarray}
+			\ln{-r_A}=\ln{k}+\alpha \ln{C_A}+\beta \ln{C_B}
+			\label{log scale of design equation}
+		\end{eqnarray}
+	\item Do a linear regression of the data, since you will not have a perfect fit
+	\item You can also do this with $C_B$ in excess
+	\item \begin{eqnarray}
+			\ln{-r_A}&=&\ln{k}+\alpha \ln{C_A}+\beta \ln{C_{B0}}\\
+			\ln{-r_A}&=&\alpha \ln{C_A}+(\beta \ln{C_{B0}}+ \ln{k})
+		\end{eqnarray}
+	\item Repeat the experiment with a different $C_B$
+	\item You might think to do this by putting $C_A$ in excess. This would mean, however, that you are getting $r_B$, not $r_A$, so $\ln{k_A} \not= \ln{k_B}$ is not true.
+\end{list}
+
+\begin{list}{}{}
+\item The third way is to get just a little bit of data in an attempt to get the forward reaction rate only. Then change $C_A$ and $C_B$ and run it again.
+\item This is a time when you would regress the data directly (using $\ln{}$s).
+\end{list}
+
+Polymath nonlinear data regression
+\begin{enumerate}
+	\item Open polymath
+	\item New
+	\item Data Regression
+	\item click on columns to rename them
+	\item Hit ``Nonlinear''
+	\item (Name of column) = (otherColumn)^(parameters)
+	\item Put in guesses
+	\item 
+\end{enumerate}
+\end{document} 
+

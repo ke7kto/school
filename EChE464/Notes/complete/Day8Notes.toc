@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}The derivative of experimental data}{1}{section.2}
+\contentsline {section}{\numberline {3}\href {https://blackboard.case.edu/courses/1/eche464_jam12/content/_1224783_1/processingvirialdata2.pdf}{See notes online for inverting the virial isotherm}}{2}{section.3}
+\contentsline {section}{\numberline {4}Tensiometers}{2}{section.4}
+\contentsline {subsection}{\numberline {4.1}Classical Method: Capillary Rise}{2}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Axisymmetric Drop Shape Methodology}{4}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Sessile Drop Method}{4}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Du N\"uoy Tensiometer}{4}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Wilhemy Plate}{5}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Maximum Bubble Pressure Method}{6}{subsection.4.6}
+\contentsline {section}{\numberline {5}conclusion}{7}{section.5}

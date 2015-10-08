@@ -1,0 +1,55 @@
+########################################################################
+#
+#    Citrix XenApp Clients for UNIX® Version 11.
+#
+#    Copyright 1998-2009 Citrix Systems, Inc. All rights reserved.
+#
+########################################################################
+
+This file contains installation instructions for the Citrix XenApp Clients for UNIX.
+
+Please read this file fully before installing the Clients for UNIX.  
+It contains important information that may be more up to date than other 
+documentation you have available.
+
+For the latest information on this, and other Citrix Systems, Inc.
+products, please visit our Web site at:
+
+http://www.citrix.com/
+
+1. Contents
+===========
+  Installation Instructions
+  After Installation
+  Your Comments Please
+
+2. Installation Instructions
+============================
+To install the Clients for UNIX run the setupwfc script and
+follow the on-screen prompts. The default installation location is 
+/usr/lib/ICAClient for installation by the superuser, otherwise
+$HOME/ICAClient/$OS, but this can be changed during installation. 
+
+If the default installation location is not used then environment variable
+ICAROOT must be set to point to the actual installation location.
+
+The setupwfc script can also be used to uninstall the Clients for UNIX.
+
+3. After Installation
+=====================
+Latest information relating to the Clients for UNIX can be
+found in the file readme.txt in the installation directory.
+
+4. Your Comments Please
+=======================
+If you have any comments about the Clients for UNIX software 
+or documentation, please send them by letter or fax to:
+
+Citrix Systems, Inc.
+851 West Cypress Creek Road
+Fort Lauderdale, FL 33309
+1-954-267-9319
+http://www.citrix.com/
+
+########################################################################
+

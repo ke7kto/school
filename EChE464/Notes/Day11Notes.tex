@@ -1,0 +1,205 @@
+\documentclass{article}
+%\usepackage{fullpage}
+\usepackage{mathtools}
+\usepackage{mhchem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mdframed}
+\author{Mann, J}
+\title{Day 11 Notes}
+\date{October 1, 2015}
+\newenvironment{aside}{\begin{mdframed}}{\end{mdframed}}
+\renewcommand{\d}[0]{\mathrm{d}}
+\newcommand{\pOne}[2]{\frac{\partial #1}{\partial #2}}
+\renewcommand{\deg}[0]{\degree}
+\newcommand{\pTwo}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\dOne}[2]{\frac{\d #1}{\d #2}}
+\newcommand{\dTwo}[2]{\frac{\d^2 #1}{\d #2^2}}
+\newcommand{\diag}[1]{\bcancel{#1}}
+\newcommand{\matr}[1]{\bm{#1}}
+\newcommand{\qvec}[0]{\vec{q}}
+\newcommand{\xvec}[0]{\vec{x}}
+\newcommand{\nvec}[0]{\vec{n}}
+\newcommand{\aone}[0]{\vec{a}_1}
+\newcommand{\atwo}[0]{\vec{a}_2}
+\newcommand{\note}[1]{\vspace{3\parsep}\textit{\textbf{Note: }}#1\vspace{2\parsep}}
+\newcommand{\norm}[1]{\left|#1\right|}
+\graphicspath{{Day11NotesPics/}}
+\begin{document}
+\maketitle{}
+\begin{section}{Intro}
+	\begin{itemize}
+		\item Problem Set, Due October 13
+		\item $a_{11},a_{12},a_{21},a_{22}$ direct space
+
+					$a_{11}^\ast,a_{12}^\ast,a_{21}^\ast,a_{22}^\ast$ reciprocal space
+		\item Cross-product method for generating $a_{ij}^\ast$ from $a_{ij}$.
+		\item Matrix method
+		\item Adsorbate Net; Notation
+	\end{itemize}
+\end{section}
+\begin{section}{First}
+	The incident beam needs to have a wavelength $\lambda$, $\lambda$ as a function $E_e$ in a scattering experiment: - Find $E_e$ such that you see atomic structure - 
+	$0.2$nm up to $100$nm.
+	$\lambda_\text{500eV}$ compare to $\lambda_\text{50,000eV}$.
+
+	Compute $\norm{\vec{P}}$ and use 
+	\begin{align*}
+		\vec{P} &= \bar{h}\qvec\\
+		\qvec &=k\hat{e}\\
+		E &= \frac{1}{2}mv^2 = \frac{1}{2m}\norm{\vec{P}}^2
+	\end{align*}
+
+	You can also go online and google ``Low energy electron diffraction'' (LEED) and you'll soon find some help in working out the physics. Once you get the idea, it's a straightforward calculation, but I'm particularly interested in the idea that you look at the scaling that goes on. These two length scales are in quite different domains and will be sensitive to different length scales. When you give me the paper, try to write it as if you were writing a short paper to a journal. It doesn't have to be more than a half a page to 1-$\frac{1}{2}$ pages, short, and in English. 
+
+I'm pretty much doing and have done number two. Part B might be one you haven't seen, but think about it. Come in and talk to me.
+
+Three, you've had most of that, and I'll spend some time with part B, so that part C is the plot I talked about last time, and I think you'll find that quite instructive.
+
+Part c: assume that $\vec{a}=(2.492,0)$\AA, compute the maximum.
+
+look at the function around the point in reciprocal space.
+
+Take the width at half the height of the peak, which is considered to be the width of the particle. 
+
+Your task is to study this function, and look at what happens to the full width at half height as $N$ increases. 
+
+Come to class with some questions.
+\end{section}
+\begin{section}{Suppose I let $\phi$}
+	\begin{align*}
+		\vec{\phi} &= \frac{\phi}{f}=\sum_{n=0}^{N}e^{i\qvec\xvec_n}
+	\end{align*}
+	Recall that I got this from a Fourier transform of the density function, 
+	\begin{align*}
+		\int e^{i\qvec\xvec} \rho(\xvec)\d x
+	\end{align*}
+	Where to start enumeration with $n$
+
+	Figure
+	
+	caption{The heavy dot is (0,0). I can go out in a spiral pattern as far out as I need. This construction allows you to start anywhere in the net and cover the entire net.}
+
+	
+	What this suggests also is that with each $n$, there is a $1:1$ correspondence with $(m_1,m_2)$, where I've taken $\xvec_n = m_1\vec{a}_1 + m_2\vec{a}_2$.
+
+	Next I need to substitute this into $\bar{\phi}$.
+
+	\begin{align*}
+		\bar{\phi} &= \left(\sum_{m_1=0}^{N}e^{i\qvec\cdot m_1\aone}\right)\left(\sum_{m_1=0}^{N}e^{i\qvec\cdot m_2\atwo}\right)\\
+		\sum_{m_1=0}^{N}\left(e^{i\qvec\cdot \aone}\right)^{m_1}
+	\end{align*}
+	Note that $\aone$ is a constant. If I keep $\qvec$ constant, I get a free variable. 
+
+	\note{Ratio of the $m_1$ term to the $m_1+1$ term is constant, therefore you can conclude that this is a geometric series. Can I sum a geometric series?}
+
+	If I look at:
+	\begin{align*}
+		\sum_{n=0}^{N}x^n &= 1 + x + x^2 + x^3 + \dots + x^N
+	\end{align*}
+	Can I express this sum in a simple function? Yes. 
+	\begin{align*}
+		\sum_{n=0}^{N-1}x^n &= \frac{1-x^N}{1-x}
+	\end{align*}
+	Proof:
+	\begin{align*}
+		\frac{1}{1-x}&= \sum_{n=0}^{N-1}+\frac{x^N}{1-x}
+	\end{align*}
+	The next thing you want to do is take
+	\begin{align*}
+		\sum_{m_1=0}^{N}(e^{i\qvec\cdot\aone})^{m_1}&=\frac{1-e^{i(\qvec\cdot\aone)N}}{1-e^{i\qvec\cdot\aone}} = F
+	\end{align*}
+	But I would like to get
+	\begin{align*}
+		\frac{\sin{(\frac{1}{2})}N\qvec\aone}{\sin{(\frac{1}{2})}\qvec\aone}
+	\end{align*}
+	Suggestion is to multiply and divide $F$ so that the numerator and denominator are of the form of $\sinh{(x)}$.
+
+	\note{$\sinh{(ix)}=i\sin{x}=\frac{1}{2}(e^{ix}-e^{-ix})$}
+
+	You put it all together and you get one thing that you need to recognize. A function, $\bar{\phi}$, that has a complex exponential that is constant and multiplies the scattering function:
+
+	Hint: You need $\bar{\phi}\ast\bar{\phi}$, where
+	
+	$\bar{\phi}\ast$ means that $i$ is substituted by $-i$ in $\bar{\phi}$ (Complex conjugate).
+	You will find that the constant drops out in $\bar{\phi}\ast\bar{\phi}$ 
+	
+	The idea is simpy this, if I have a function $g(i)$ multiplied by $f(i)$, $\norm{g(i)f(i)} = f(i)$ can be true in certain situations. e.g. $e^{ix}e^{-ix}=1$.
+
+	Go through this rigorously so that you're comfortable with that result.
+
+	\begin{align*}
+		\norm{\bar{\phi}}^2 &= \left(\frac{\sin{(\frac{1}{2})}N\qvec\aone}{\sin{(\frac{1}{2})}\qvec\aone}\right)\left(\frac{\sin{(\frac{1}{2})}N\qvec\atwo}{\sin{(\frac{1}{2})}\qvec\atwo}\right)
+	\end{align*}
+	Get $\frac{0}{0}$ under certain conditions. In the limit $\norm{\bar{\phi}}$ is finite. You should conclude that $\qvec = h\aone^\ast + k\atwo^\ast$, there $h,k$ are integers.
+
+	So you must also have that \eqref{Eq:one}, and that \eqref{Eq:two}, but that \eqref{Eq:three}
+	\begin{align}
+		\aone\cdot\aone^\ast &= 2\pi\label{Eq:one}\\
+		\atwo\cdot\atwo^\ast &= 2\pi\label{Eq:two}\\
+		\aone\cdot\atwo^\ast &= \atwo\cdot\aone^\ast = 0\label{Eq:three}
+	\end{align}
+	We started out with $\rho = \Sigma_n \delta(\xvec-\xvec_n) F(\rho) = \text{reciprocal space}$
+
+	Both the direct and reciprocal space are experimentally accessible. Microscopy can view direct space and diffraction can view reciprocal space. We only recently obtained microscopy methods that can view atoms, but we've had diffraction techniques for a long time.
+	\begin{figure}[h]
+		\centering
+		%\includegraphics{<+file+>}
+		\caption{caption}
+		\label{fig:vectorRound}
+	\end{figure}
+Figure
+$\vec{n},\aone,\atwo$ are all vectors. $\aone$ and $\atwo$ are in the plane, but now I need another vector, one normal to the plane and perpendicular to $\aone$ and $\atwo$. Use the cross product
+\begin{align*}
+	\aone &= \begin{pmatrix}a_{11} & a_{12} & 0\end{pmatrix}\\
+	\atwo &= \begin{pmatrix}a_{21} & a_{22} & 0\end{pmatrix}\\
+	\aone\times\atwo &= \vec{n}
+\end{align*}
+Remember the right hand rule, always take $1$ into $2$. Curl fingers from $a_1$ to $a_2$ with the thumb pointed up. $\aone\times\atwo = -\atwo\times\aone$. The convention in surface physics is that the normal points into the less dense phase.
+
+Now then, (see Figure~\ref{fig:vectorRound}).
+\begin{align*}
+	\nvec &= \aone\times\atwo\\
+	\aone^\ast &= \frac{\atwo\times\nvec}{?}\\
+	\frac{\nvec\times\aone}{\atwo\cdot\nvec\times\aone} &= \atwo^\ast\\
+	\aone \cdot\aone^\ast &= (2\pi)
+\end{align*}
+Note that 
+\begin{align*}
+	\frac{\aone\cdot\atwo\times\nvec}{?} &= 1 (\times 2\pi)\\
+	\aone\cdot\atwo\times\hat{n} &= ?
+\end{align*}
+This is known as the box product.
+
+\begin{align*}
+	\atwo\cdot\nvec\times\aone &= \aone\cdot\atwo\times\nvec
+\end{align*}
+
+This is an even permutation. Even permutations $\aone\cdot\atwo\times\nvec$ are positive, odd permutations are negative.
+
+\begin{aside}
+Even permutations:
+\begin{align*}
+	\aone\cdot\atwo\times\nvec \rightarrow \atwo\cdot\aone\times\nvec \text{odd permutation}\\
+	\atwo\cdot\nvec\times\aone \rightarrow \atwo\cdot\aone\times\nvec \rightarrow \aone\cdot\atwo\times\nvec \text{two permutations, so even}
+\end{align*}
+\end{aside}
+There's another way fo doing this, that we're not going to have time to explore, that's for next time, using matrices. For example, I can write $\matr{A} = \begin{pmatrix}a_{11} & a_{12}\\a_{21} & a_{22}\end{pmatrix} = \begin{pmatrix}\aone\\\atwo\end{pmatrix}$. Reciprocal space is just $A^{-1}$
+\end{section}
+\begin{section}{conclusion}
+	Next time:
+	adsorption. Think about where stuff adsorbed to platinum goes.
+
+	Also, for relating adsorbate and adsorbent structures:
+	\begin{enumerate}
+		\item Wood's notation
+		\item Matrix notation
+	\end{enumerate}
+\end{section}
+	\end{document}

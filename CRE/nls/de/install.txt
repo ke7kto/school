@@ -1,0 +1,60 @@
+########################################################################
+#
+#    Citrix XenApp Clients für UNIX® Version 10.
+#
+#    Copyright 1998-2009 Citrix Systems, Inc. Alle Rechte vorbehalten.
+#
+########################################################################
+
+Diese Datei enthält Informationen zur Installation des Citrix XenApp Clients für UNIX.
+
+Bitte lesen Sie diese Datei vor Installation des Clients für UNIX
+vollständig durch. Sie enthält wichtige Informationen, die
+möglicherweise aktueller sind als die Ihnen zur Verfügung stehende
+Dokumentation. 
+
+Die neuesten Informationen zu diesem Produkt und weiteren Produkten 
+von Citrix Systems, Inc. finden Sie im Internet unter der folgenden
+Adresse: 
+
+http://www.citrix.com/
+
+1. Inhalt
+=========
+  Installationsanweisungen
+  Nach der Installation
+  Leserkommentare
+
+2. Installationsanweisungen
+===========================
+Um die Clients für UNIX zu installieren, führen Sie das Skript
+setupwfc aus und folgen Sie den Anweisungen auf dem Bildschirm. Das
+Standard-Installationsverzeichnis ist /usr/lib/ICAClient für Installationen
+vom Superuser und sonst $HOME/ICAClient/$OS. Diese Angabe kann jedoch 
+während der Installation geändert werden. 
+
+Wird das Standard-Installationsverzeichnis nicht verwendet, muss die
+Umgebungsvariable ICAROOT so gesetzt werden, dass sie auf das
+tatsächliche Installationsverzeichnis verweist. 
+
+Mit dem Skript setupwfc können die Clients für UNIX auch 
+deinstalliert werden.
+
+3. Nach der Installation
+========================
+Aktuelle Informationen über die Clients für UNIX finden Sie
+in der Datei readme.txt im Installationsverzeichnis.
+
+4. Leserkommentare
+==================
+Wenn Sie Kommentare zur Software oder Dokumentation der Clients
+für UNIX haben, senden Sie diese bitte per Brief oder Fax an
+folgende Adresse: 
+
+Citrix Systems, Inc.
+851 West Cypress Creek Road
+Fort Lauderdale, FL 33309
+1-954-267-9319
+http://www.citrix.com/
+
+########################################################################

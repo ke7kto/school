@@ -1,0 +1,12 @@
+%chk=J:\che513\mediumProject\COopt.chk
+# opt hf/6-31g(d) geom=connectivity
+
+Title Card Required
+
+0 1
+ C                 -2.41148467    0.12538725    2.17549821
+ O                 -1.72947269    0.96020919    1.52626595
+
+ 1 2 2.0
+ 2
+

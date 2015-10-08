@@ -1,0 +1,173 @@
+\begin{thebibliography}{10}
+
+\bibitem{GBDSilver}
+R.~E. Hoffman and D.~Turnbull.
+\newblock Lattice and grain boundary self-diffusion in silver.
+\newblock {\em Journal of Applied Physics}, 22(5):634--639, 1951.
+\newblock PT: J; NR: 17; TC: 276; J9: J APPL PHYS; PG: 6; GA: UD773; UT:
+  WOS:A1951UD77300020.
+
+\bibitem{Fisher}
+J.~C. Fisher.
+\newblock Calculation of diffusion penetration curves for surface and grain
+  boundary diffusion.
+\newblock {\em Journal of Applied Physics}, 22(1):74--77, 1951.
+\newblock PT: J; NR: 2; TC: 958; J9: J APPL PHYS; PG: 4; GA: UD769; UT:
+  WOS:A1951UD76900014.
+
+\bibitem{GBDAnisotropic}
+Y.M. Mishin and I.~V. Yurovitskii.
+\newblock A generalized-model of grain-boundary diffusion.
+\newblock {\em Philosophical Magazine A-Physics of Condensed Matter Structure
+  Defects and Mechanical Properties}, 64(6):1239--1249, DEC 1991.
+\newblock PT: J; NR: 18; TC: 12; J9: PHILOS MAG A; PG: 11; GA: GU162; UT:
+  WOS:A1991GU16200004.
+
+\bibitem{GBDInhomogenous}
+L.~Klinger and E.~Rabkin.
+\newblock Beyond the fisher model of grain boundary diffusion: Effect of
+  structural inhomogeneity in the bulk.
+\newblock {\em Acta Materialia}, 47(3):725--734, FEB 5 1999.
+\newblock PT: J; NR: 26; TC: 34; J9: ACTA MATER; PG: 10; GA: 170BQ; UT:
+  WOS:000078785900001.
+
+\bibitem{GBDOrientation}
+D.~TURNBULL and RE~HOFFMAN.
+\newblock The effect of relative crystal and boundary orientations on grain
+  boundary diffusion rates.
+\newblock {\em Acta Metallurgica}, 2(3):419--426, 1954.
+\newblock PT: J; NR: 16; TC: 309; J9: ACTA METALL MATER; PG: 8; GA: UL520; UT:
+  WOS:A1954UL52000010.
+
+\bibitem{Whipple}
+R.T.P. Whipple.
+\newblock Concentration contours in grain boundary diffusion.
+\newblock {\em Philosophical Magazine}, 45(371):1225--1236, 1954.
+\newblock PT: J; NR: 3; TC: 616; J9: PHILOS MAG; PG: 12; GA: UV269; UT:
+  WOS:A1954UV26900001.
+
+\bibitem{GBDAnalysis}
+A.D. LeClaire.
+\newblock Analysis of grain boundary diffusion measurements.
+\newblock {\em British Journal of Applied Physics}, 14(6):351--\&, 1963.
+\newblock PT: J; NR: 14; TC: 484; J9: BRIT J APPL PHYS; PG: 0; GA: 7435A; UT:
+  WOS:A19637435A00013.
+
+\bibitem{GBDEffectiveMedium}
+Ying Chen and Christopher~A. Schuh.
+\newblock Diffusion on grain boundary networks: Percolation theory and
+  effective medium approximations.
+\newblock {\em Acta Materialia}, 54(18):4709--4720, 10 2006.
+
+\bibitem{DiffusionTripleJunction}
+Ying Chen and Christopher~A. Schuh.
+\newblock Contribution of triple junctions to the diffusion anomaly in
+  nanocrystalline materials.
+\newblock {\em Scripta Materialia}, 57(3):253--256, AUG 2007.
+\newblock PT: J; NR: 30; TC: 39; J9: SCRIPTA MATER; PG: 4; GA: 180ZI; UT:
+  WOS:000247406100019.
+
+\bibitem{GBDKirkendall}
+L.~Klinger and E.~Rabkin.
+\newblock Theory of the kirkendall effect during grain boundary interdiffusion.
+\newblock {\em Acta Materialia}, 59(4):1389--1399, FEB 2011.
+\newblock PT: J; NR: 36; TC: 17; J9: ACTA MATER; PG: 11; GA: 720FE; UT:
+  WOS:000287265100008.
+
+\bibitem{GBDReview}
+Y.~Mishin and C.~Herzig.
+\newblock Grain boundary diffusion: recent progress and future research.
+\newblock {\em Materials Science and Engineering A-Structural Materials
+  Properties Microstructure and Processing}, 260(1-2):55--71, FEB 1999.
+\newblock PT: J; CT: DOE Panel on Time-Dependent Interfacial Decohesion; CY:
+  JUN 24-27, 1997; CL: GREAT OAKS LANDING, MARYLAND; NR: 59; TC: 119; J9: MAT
+  SCI ENG A-STRUCT; PG: 17; GA: 168HJ; UT: WOS:000078685900007.
+
+\bibitem{GreenIrreversible}
+ms~green.
+\newblock markoff random processes and the statistical mechanics of
+  time-dependent phenomena .2. irreversible processes in fluids.
+\newblock {\em journal of chemical physics}, 22(3):398--413, 1954.
+\newblock pt: j; nr: 9; tc: 649; j9: j chem phys; pg: 16; ga: uc157; ut:
+  wos:a1954uc15700009.
+
+\bibitem{GreenTimeDependent}
+ms~green.
+\newblock markoff random processes and the statistical mechanics of
+  time-dependent phenomena.
+\newblock {\em journal of chemical physics}, 20(8):1281--1295, 1952.
+\newblock pt: j; nr: 19; tc: 437; j9: j chem phys; pg: 15; ga: uc102; ut:
+  wos:a1952uc10200015.
+
+\bibitem{KuboGeneral}
+R.~KUBO.
+\newblock Statistical-mechanical theory of irreversible processes .1. general
+  theory and simple applications to magnetic and conduction problems.
+\newblock {\em Journal of the Physical Society of Japan}, 12(6):570--586, 1957.
+\newblock PT: J; NR: 27; TC: 5413; J9: J PHYS SOC JPN; PG: 17; GA: WJ214; UT:
+  WOS:A1957WJ21400003.
+
+\bibitem{KuboStatMech}
+R.~KUBO, M.~YOKOTA, and S.~NAKAJIMA.
+\newblock Statistical-mechanical theory of irreversible processes .2. response
+  to thermal disturbance.
+\newblock {\em Journal of the Physical Society of Japan}, 12(11):1203--1211,
+  1957.
+\newblock PT: J; NR: 18; TC: 397; J9: J PHYS SOC JPN; PG: 9; GA: WJ219; UT:
+  WOS:A1957WJ21900005.
+
+\bibitem{NoseHooverThermostat}
+S.~NOSE.
+\newblock A unified formulation of the constant temperature molecular-dynamics
+  methods.
+\newblock {\em Journal of Chemical Physics}, 81(1):511--519, 1984.
+\newblock PT: J; NR: 27; TC: 5078; J9: J CHEM PHYS; PG: 9; GA: TA661; UT:
+  WOS:A1984TA66100062.
+
+\bibitem{MeltInsight}
+Gaurav Goel, Liqun Zhang, Daniel~J. Lacks, and James A.~Van Orman.
+\newblock Isotope fractionation by diffusion in silicate melts: Insights from
+  molecular dynamics simulations.
+\newblock {\em Geochimica et Cosmochimica Acta}, 93:205--213, SEP 15 2012.
+\newblock PT: J; NR: 38; TC: 3; J9: GEOCHIM COSMOCHIM AC; PG: 9; GA: 000YK; UT:
+  WOS:000308426800012.
+
+\bibitem{GBDkMCMD}
+MR~S{\o}rensen, Y.~Mishin, and AF~Voter.
+\newblock Diffusion mechanisms in cu grain boundaries.
+\newblock {\em Physical Review B}, 62(6):3658--3673, AUG 1 2000.
+\newblock PT: J; NR: 45; TC: 113; J9: PHYS REV B; PG: 16; GA: 343XN; UT:
+  WOS:000088727900017.
+
+\bibitem{MantleFirstPrinciplesNature}
+M.~W. Ammann, J.~P. Brodholt, J.~Wookey, and D.~P. Dobson.
+\newblock First-principles constraints on diffusion in lower-mantle minerals
+  and a weak d$^{\prime\prime}$ layer.
+\newblock {\em Nature}, 465(7297):462--465, May 2010.
+
+\bibitem{MeltThermalDiffusion}
+Daniel~J. Lacks, Gaurav Goel, Charles~J. Bopp, James A.~Van Orman, Charles~E.
+  Lesher, and Craig~C. Lundstrom.
+\newblock Isotope fractionation by thermal diffusion in silicate melts.
+\newblock {\em Physical Review Letters}, 108(6):065901, FEB 10 2012.
+\newblock PT: J; NR: 23; TC: 11; J9: PHYS REV LETT; PG: 5; GA: 889VL; UT:
+  WOS:000300102900019.
+
+\bibitem{DiffusionAlPericlase}
+James A.~Van Orman, Chen Li, and Katherine~L. Crispin.
+\newblock Aluminum diffusion and al-vacancy association in periclase.
+\newblock {\em Physics of the Earth and Planetary Interiors}, 172(1-2):34--42,
+  JAN 2009.
+\newblock PT: J; NR: 29; TC: 13; J9: PHYS EARTH PLANET IN; PG: 9; GA: 397JS;
+  UT: WOS:000262659600007.
+
+\bibitem{MDLiquidJoins}
+Daniel~J. Lacks, David~B. Rear, and James A.~Van Orman.
+\newblock Molecular dynamics investigation of viscosity, chemical diffusivities
+  and partial molar volumes of liquids along the mgo-sio2 join as functions of
+  pressure.
+\newblock {\em Geochimica et Cosmochimica Acta}, 71(5):1312--1323, MAR 1 2007.
+\newblock PT: J; NR: 38; TC: 37; J9: GEOCHIM COSMOCHIM AC; PG: 12; GA: 146AE;
+  UT: WOS:000244906100016.
+
+\end{thebibliography}

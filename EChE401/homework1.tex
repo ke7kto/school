@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{sidecap}
+\usepackage{mathtools}
+\usepackage{mhchem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{gensymb}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\author{Adriaan Riet}
+\title{Grain Boundary Diffusion}
+\renewcommand{\d}[0]{\mathrm{d}}
+\newcommand{\pOne}[2]{\frac{\partial #1}{\partial #2}}
+\renewcommand{\deg}[0]{\degree}
+\newcommand{\pTwo}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\dOne}[2]{\frac{\d #1}{\d #2}}
+\newcommand{\dTwo}[2]{\frac{\d^2 #1}{\d #2^2}}
+\newcommand{\diag}[1]{\bcancel{#1}}
+\newcommand{\matr}[1]{\bm{#1}}
+\begin{document}
+\maketitle{}
+
+%\begin{section}{Outline}
+%	\begin{itemize}
+%		\item Grain boundary diffusion is faster than intramedial (intracrystalline?) diffusion
+%		\item Grain boundary diffusion is not well characterized
+%		\item MD Simulations can help shed light on grain boundary diffusion
+%		\item Experiments can be done that provide relevant numbers on grain boundary diffusion in magnesium oxide
+%		\item We hope there is a meaningful relationship that can be derived about grain boundary diffusion
+%	\end{itemize}
+%
+%\end{section}
+
+%\begin{section}{Scope of Project}
+%	\begin{itemize}
+%		\item Investigation of grain boundary diffusion
+%		\item Melts have been previously studied
+%		\item Grain boundaries are more complicated because it is only quasi-equilibrium
+%		\item Diffusion on the grain boundary scale is mathematically stiff (>10 ns vs 10 fs)
+%		\item Systematic approach to learning about factors that influence grain boundary diffusion including 
+%			\begin{itemize}
+%				\item Temperature
+%				\item Pressure
+%				\item Impurities/compositional properties
+%			\end{itemize}
+%	\end{itemize}
+%\end{section}
+\begin{section}{Background}
+	Grain boundary diffusion has been a subject of research since at least the early 20th century \cite{GBDSilver}.  In 1951, Fisher published a method of gathering grain boundary diffusion information, with an approximate derivation of the applicable equations \cite{Fisher}.It was observed that diffusion along a grain boundary was much faster than diffusion in bulk phases. Unfortunately, Fisher's model incorporated several assumptions to make the derivation more straightforward, and the work has been built upon by Mishin and Yurovitskii \cite{GBDAnisotropic}, as well as Klinger and Rabkin \cite{GBDInhomogenous}, focusing on anisotropy of the grain boundary diffusion and inhomogeneity of the bulk phase, respectively. More work has also been done by Turnbull et al. dealing with orientation effects \cite{GBDOrientation}. It has been noted that Fisher's derivation was very approximate, and that a better theoretical derivation was introduced by Whipple \cite{Whipple}, but that Whipple's derivation was unable to be applied to experiment \cite{GBDAnalysis}.  
+	
+	An attempt has been made to relate overall average grain boundary diffusion effects \cite{GBDEffectiveMedium}, which has been used in obtaining intergranular diffusion characteristics \cite{DiffusionTripleJunction}. Further, the problem of the ``Kirkendall Effect'' during grain boundary diffusion shows that the physical location of the interface can change, which has been addressed \cite{GBDKirkendall}. Much of the research in grain boundary diffusion has been using experimental observation and phenomenological models, but atomistic models have the potential to give insight into the modes of diffusion and the underlying causes \cite{GBDReview}.  Thanks to work done by Green \cite{GreenIrreversible,GreenTimeDependent} and Kubo \cite{KuboGeneral,KuboStatMech}, there is a solid framework by which an atomistic model can be tied to transport properties.
+
+	Unfortunately, numerically modeling the systems involved in grain boundary diffusion is computationally intensive.  Also, the ensemble used to in many MD simulations involves a constant energy assumption, which is less helpful than a constant temperature assumption. This problem was overcome by the Nose-Hoover method \cite{NoseHooverThermostat}.  MD simulations for diffusion problems run with timescales on the order of fs, while the diffusion characteristics are determined on the order of ns, so that meaningful simulations need to run on the order of $10^6$ timesteps \cite{MeltInsight}. An effort was made by S\o renson et al. to use a hybrid kinetic Monte Carlo-molecular dynamics approach, which used molecular dynamics to determine the modes by which diffusion can occur, and using kinetic monte carlo to determine the rates of diffusion. This allowed for a smaller, less rigorous molecular dynamics simulation, and because the monte carlo method does not deal with these disparate timescales, computational efficiency was improved \cite{GBDkMCMD}. 
+	
+	Periclase is one of the most important minerals for understanding the properties of the deep mantle, which could be important in gaining understanding about the formation of the earth \cite{MantleFirstPrinciplesNature}. Studies have been done by Lacks and Van Orman dealing with the behavior of diffusion and isotope fractionation in silicate melts \cite{MeltThermalDiffusion}, as well as diffusion of \ce{Al} in the bulk of periclase \cite{DiffusionAlPericlase}. Viscosity, chemical diffusivity and partial molar volumes of silicate liquids near interfaces were found as a function of pressure through MD Simulation as well \cite{MDLiquidJoins}. 
+
+	We propose a study of grain boundary diffusion in periclase through experimental methods and through simulation techniques, in order to increase the available information and gain further insight on the mechanism and factors in grain boundary diffusion.
+
+
+
+\end{section}
+
+
+%\begin{section}{Background - old}
+%	Things to build the argument:
+%	\begin{itemize}
+%		\item Transition from dislocation creep to diffusion creep
+%		\item Show the lack of effort on grain boundary diffusion, especially in these regimes
+%		\item rheological and chemical properties of the mantle consistent with seismically observed D'' Layer at the core-mantle boundary
+%		\item Lack of Schotty defects (Ita and Cohen, 1997)
+%
+%	\end{itemize}
+%Things requiring personal research:
+%	\begin{itemize}
+%		\item MD Simulations have been used to study the isotope effect on diffusion in simple monatomic (Kluge and Schober, 2000) and binary (Schober, 2001) Lennard-Jones liquids, liquid MgO (Tsuchiyama et al. 1994) and water (Bourg et al. 2010)
+%		\item Atomic interactions are based on the van Beest-Kramer-van Santen 1990
+%		\item Saika-Voivod 2001
+%		\item Vollmayr et al. 1996
+%		\item GROMACS (Hess et al., 2008)
+%
+%
+%	\end{itemize}
+
+%\end{section}
+  \bibliography{homework1}
+  \bibliographystyle{unsrt}
+\end{document}
